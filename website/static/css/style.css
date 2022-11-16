@@ -1,0 +1,157 @@
+* {
+  font-family: "Poppins";
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+body {
+
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow-y: hidden;         /*Makni ako želiš scroll i dodaj    html { overflow-y: scroll; }  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dde5f4;
+}
+
+.screen-1 {
+  background: #f1f7fe;
+  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  box-shadow: 0 0 2em #e6e9f9;
+  gap: 2em;
+}
+
+.screen-1 .data_input {
+  background: white;
+  box-shadow: 0 0 2em #e6e9f9;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: #4d4d4d;
+
+}
+.screen-1 .data_input input {
+  outline: none;
+  border: none;
+}
+.screen-1 .data_input input::-moz-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screen-1 .data_input input:-ms-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screen-1 .data_input input::placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screen-1 .data_input ion-icon {
+  color: #4d4d4d;
+  margin-bottom: -0.2em;
+}
+.screen-1 .password {
+  background: white;
+  box-shadow: 0 0 2em #e6e9f9;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: #4d4d4d;
+}
+.screen-1 .password input {
+  outline: none;
+  border: none;
+}
+.screen-1 .password input::-moz-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screen-1 .password input:-ms-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screen-1 .password input::placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screen-1 .password ion-icon {
+  color: #4d4d4d;
+  margin-bottom: -0.2em;
+}
+.screen-1 .password .show-hide {
+  margin-right: 0em;
+  float: right;
+}
+.screen-1 .login {
+  padding: 1em;
+  background: #3e4684;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+}
+.screen-1 .footer {
+  display: flex;
+  font-size: 0.7em;
+  color: #5e5e5e;
+  justify-content: center;
+  gap:10em;
+  padding-bottom: 2em;
+  margin-top: 2em;
+}
+.screen-1 .footer span {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*---------------------*/
+
+form > * {
+  display: block;
+  margin: 20px 0;
+  width:25em;
+  margin: auto;
+  margin-bottom: 0.35em;
+}
+
+.logo{
+  display: block;
+  margin:auto;
+  width:100px;
+  
+}
+
+#password2_ {
+  margin-bottom: 2em;
+}
+
+#man {
+  border-width: 0.1px;
+}

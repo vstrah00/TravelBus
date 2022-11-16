@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+    Ovo je parent stranica na koju će se 
+    nadograđivati ostale stranice.
+-->
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>{% block title %}Travel Bus{% endblock %}</title>
+    </head>
+
+    <body>
+        <h1>{%block header%}TravelBus{%endblock%}</h1>
+        <a href="/">{%block home%}Home{%endblock%}</a>
+        <a href="sign_up">{%block sign_up%}Sign up{%endblock%}</a>
+        <a href="login">{%block login%}Login{%endblock%}</a>
+        {% block content %}{%endblock%}
+    </body>
+</html>
+  
