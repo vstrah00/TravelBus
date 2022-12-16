@@ -9,7 +9,9 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(50))
     is_admin = db.Column(db.Boolean)
-    creation_date = db.Column(db.DateTime(timezone=True), default = func.now()) 
+    creation_date = db.Column(db.DateTime(timezone=True), default = func.now())
+    reviews =  db.relationship('Review')
+    tickets =  db.relationship('Ticket')
 
 #model entiteta: prijevozna kompanija
 class Transport_company(db.Model):                      
@@ -21,8 +23,20 @@ class Transport_company(db.Model):
  #model entiteta: vožnja(trip)
 class Trip(db.Model):                             
     id=db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True)
-    password = db.Column(db.String(50))
-    is_admin = db.Column(db.Boolean)
     creation_date = db.Column(db.DateTime(timezone=True), default = func.now()) 
-    id_trip=db.Column(db.Integer, db.ForeignKey('transport_company.id'))            #kaže koja kompanija organizira vožnju
+    id_transport_company_foreignkey=db.Column(db.Integer, db.ForeignKey('transport_company.id'))            #kaže koja kompanija organizira vožnju
+
+class Review(db.Model):
+    id=db.Column(db.Integer, primary_key=True)
+    creation_date = db.Column(db.DateTime(timezone=True), default = func.now()) 
+    id_user_foreignkey = db.Column(db.Integer, db.ForeignKey('user.id'))
+    id_transport_company_foreignkey=db.Column(db.Integer, db.ForeignKey('transport_company.id'))
+    data = db.Column(db.String(10000))
+
+class Ticket(db.Model):
+    id=db.Column(db.Integer, primary_key=True)
+    creation_date = db.Column(db.DateTime(timezone=True), default = func.now())
+
+class User_Trip(db.Model):
+    id_user_foreignkey=db.Column(db.Integer, db.ForeignKey('user.id'))
+    id_trip_foreignkey=db.Column(db.Integer, db.ForeignKey('trip.id'))
