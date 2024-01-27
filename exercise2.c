@@ -88,13 +88,16 @@ void *thread3(void *arg){
 
 int main(){
 	pthread_t th[NUM_OF_THREADS];
+    int id[4]={0,1,2,3};
 	
-	pthread_create(th[0], NULL, &thread0, 0);	
-	pthread_create(th[1], NULL, &thread1, 0);	
-	pthread_create(th[2], NULL, &thread2, 0);	
-	pthread_create(th[3], NULL, &thread3, 0);	
+	pthread_create(&th[0], NULL, &thread0, &id[0]);	
+	pthread_create(&th[1], NULL, &thread1, &id[1]);
+	pthread_create(&th[2], NULL, &thread2, &id[2]);
+	pthread_create(&th[3], NULL, &thread3, &id[3]);
 	
 	for(int i=0; i<NUM_OF_THREADS; i++){
 		pthread_join(th[i], NULL);
 	}
+
+    return 0;
 }
